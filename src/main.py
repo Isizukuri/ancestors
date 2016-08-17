@@ -1,6 +1,5 @@
 """Olympiad task."""
 from ast import literal_eval
-from itertools import zip_longest
 import sys
 
 
@@ -40,7 +39,7 @@ def _is_direct_relatives(first_person, second_person,
 
 def _ancestors_check(family_tree_dict, first_person, second_person):
     """Return first common ancestor in family tree."""
-    if first_person is second_person:
+    if first_person == second_person:
         return first_person
     first_person_ancestors = _get_all_ancestors(
         family_tree_dict,
@@ -50,7 +49,7 @@ def _ancestors_check(family_tree_dict, first_person, second_person):
         family_tree_dict,
         second_person
     )
-    ancestors_pairs = zip_longest(
+    ancestors_pairs = zip(
         first_person_ancestors,
         second_person_ancestors,
     )

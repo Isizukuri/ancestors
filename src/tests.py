@@ -1,7 +1,7 @@
 from functools import partial
 import unittest
 
-from main import main, _tree_to_dict, _get_all_ancestors, _ancestors_check
+from main import main, _tree_to_dict, _get_all_ancestors
 
 
 class TestAncestor(unittest.TestCase):
