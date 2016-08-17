@@ -24,5 +24,5 @@ Test Run of Project
 
 *Go to the ./src/ directory.*
 
- - Run tests: ``(venv): $ python -m unittest test.py``
- - Run main function from shell: ``(venv): $ python main.py 'family tree as string' 'first person' 'second person'``
+Run tests: ``(venv): $ python -m unittest test.py``
+Run main function from shell: ``(venv): $ python main.py 'family tree as string' 'first person' 'second person'``
