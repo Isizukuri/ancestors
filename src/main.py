@@ -63,10 +63,6 @@ def _ancestors_check(family_tree_dict, first_person, second_person):
             return (fp_ancestors & sp_ancestors).pop()
         except KeyError:
             pass
-        except TypeError:
-            root_ancestor = [i for i in (fp_ancestors, sp_ancestors)
-                             if isinstance(i, str)].pop()
-            return root_ancestor
 
 
 def main(family_tree_str, first_person, second_person):
