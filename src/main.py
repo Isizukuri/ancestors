@@ -28,13 +28,10 @@ def _get_all_ancestors(family_tree_dict, name):
 def _is_direct_relatives(first_person, second_person,
                          first_person_ancestors, second_person_ancestors):
     """Return ancestor if persons are direct relatives."""
-    try:
-        if first_person in second_person_ancestors:
-            return first_person
-        elif second_person in first_person_ancestors:
-            return second_person
-    except TypeError:
-        pass
+    if first_person in second_person_ancestors:
+        return first_person
+    elif second_person in first_person_ancestors:
+        return second_person
 
 
 def _ancestors_check(family_tree_dict, first_person, second_person):
