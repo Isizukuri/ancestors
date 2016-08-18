@@ -32,6 +32,8 @@ def _is_direct_relatives(first_person, second_person,
         return first_person
     elif second_person in first_person_ancestors:
         return second_person
+    else:
+        return None
 
 
 def _ancestors_check(family_tree_dict, first_person, second_person):
@@ -51,11 +53,10 @@ def _ancestors_check(family_tree_dict, first_person, second_person):
         second_person_ancestors,
     )
     for fp_ancestors, sp_ancestors in ancestors_pairs:
-        if _is_direct_relatives(first_person, second_person,
-                                fp_ancestors, sp_ancestors):
-            return _is_direct_relatives(
-                first_person, second_person,
-                fp_ancestors, sp_ancestors)
+        is_direct_relatives = _is_direct_relatives(first_person, second_person,
+                                fp_ancestors, sp_ancestors)
+        if is_direct_relatives:
+            return is_direct_relatives
         try:
             return (fp_ancestors & sp_ancestors).pop()
         except KeyError:
